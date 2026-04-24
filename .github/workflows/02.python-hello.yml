@@ -2,14 +2,18 @@ name: Run hello
 on: push
 
 jobs:
-  python-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
+    Hello:
+     runs-on: ubuntu-latest
+
+
+     steps:
+      - name: CLone repo
         uses: actions/checkout@v3
-      - name: Setup Python
+      - name: Setup py
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
-      - name: Print hello
-        run: echo "Hello from Python Workflow"
+            python-version: '3.10'
+
+      - name: Run a py 
+        run: python hemllo.py
+
