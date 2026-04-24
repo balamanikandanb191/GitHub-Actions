@@ -15,5 +15,6 @@ jobs:
             python-version: '3.10'
 
       - name: Run a py 
-        run: python hemllo.py
+        run: python 01.hello.py
+        
 
