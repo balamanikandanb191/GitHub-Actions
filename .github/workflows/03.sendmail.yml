@@ -1,0 +1,26 @@
+name: send mail
+on: push
+
+jobs:
+  sendMail:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Hello World
+        run: echo "Bala feel pannatha da!!"
+
+      - name: Sending a mail
+        if: always()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: GitHub Actions Run Completed!
+          to: balamanikandanb191@gmail.com
+          from: balamanikandanb191@gmail.com
+          body: |
+            Bala feel pannatha da!!
+            The GitHub Actions job for ${{ github.repository }} has completed.
