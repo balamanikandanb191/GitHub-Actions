@@ -1,9 +1,9 @@
 name: crontab
 on: 
     schedule:
-        - cron: '* * * * *'
-
-
+        - cron: '*/5 * * * *' # Changed to 5 mins as GitHub usually ignores 1 min intervals
+    workflow_dispatch: # Added to allow manual runs for testing
+    push: # Added to trigger on push for testing
 
 jobs:
     cron:
@@ -18,6 +18,5 @@ jobs:
          with:
             python-version: '3.10'
 
-
        - name: RunScript
-         run: python 01.hello.py
+         run: python 01.hello.py "enna da achu inga"
